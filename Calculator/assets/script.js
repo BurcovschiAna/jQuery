@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let currentInput = "";
+    let currentInput = "0";
     let lastInput = "";
     let expression = "";
     let result = "";
@@ -8,11 +8,11 @@ $(document).ready(function () {
         let button = $(this).html();
         if (button === "C") {
             lastInput = "";
-            currentInput = "";
+            currentInput = "0";
             expression = "";
             updateScreen(currentInput);
         } else if (button === "CE") {
-            currentInput = "";                    
+            currentInput = "0";                    
         } else if (button === "🔙") {                    
             if (currentInput.length > 0) {                        
                 currentInput = currentInput.substr(0, currentInput.length - 1);
@@ -20,6 +20,8 @@ $(document).ready(function () {
         } else if ($(this).attr("data-operation") === "=") {  
                 if (currentInput) {
                     expression += currentInput; 
+                } else{
+                    return;
                 }
                 if (isLastCharacterOperator(expression)) {
                     expression = expression.slice(0, -1); 
@@ -27,7 +29,7 @@ $(document).ready(function () {
                 result = eval(expression);     
                 if (result === Infinity || result === -Infinity) {
                     updateScreen("Error");
-                    currentInput = "";
+                    currentInput = "0";
                     expression = "";
                     return;
                 } else{
@@ -58,12 +60,17 @@ $(document).ready(function () {
                     expression = expression.slice(0, -1); 
                     expression += $(this).attr("data-operation");
                 }  
-                currentInput = "";
+                currentInput = "0";
             }
         } else if (button === "%"){
             currentInput = currentInput / 100;
-        } else if (number(button)){                        
-            currentInput += button; 
+        } else if (number(button)){
+            if(currentInput === "0"){
+                currentInput = button;
+            } else{
+                currentInput += button; 
+            }                  
+            
         }
         updateScreen(currentInput)
     });
@@ -80,6 +87,10 @@ $(document).ready(function () {
         return !isNaN(value);
     }
     function updateScreen(value) {
-        $(".calc").html(value);
+        $(".screen").html(value);
     }
+    $(".btn").on("click", function () {
+        $(this).addClass("pressed");
+        setTimeout(() => $(this).removeClass("pressed"), 300);
+    });
 });

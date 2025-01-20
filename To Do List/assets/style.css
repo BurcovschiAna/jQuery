@@ -1,69 +1,106 @@
-*{
+/* CSS styles for the application */
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif; /* Set a default font */
 }
-body{
-    background: linear-gradient(to top right,#A31D1D, #FF4191, #874CCC, #332FD0);
-    height: 100vh;
+
+body {
+    background: linear-gradient(to top right,#A31D1D, #FF4191, #874CCC, #332FD0); /* Gradient background */
+    height: 100vh; /* Full height */
 }
-.container{
-    max-width: 500px;
-    margin: 100px auto;
-    padding: 20px;
+
+.container {
+    max-width: 500px; /* Maximum width for the container */
+    margin: 100px auto; /* Center the container */
+    padding: 20px; /* Padding inside the container */
 }
-h1, .copyrights{
-    color: white;
-    text-align: center;
-    padding: 20px 0;
+
+h1, .copyrights {
+    color: white; /* Text color for header and copyrights */
+    text-align: center; /* Center align text */
+    padding: 20px 0; /* Padding for header and copyrights */
 }
-.new-list-container{
-    font-size: 20px;
-    text-align: center;
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.214);
+
+.new-list-container {
+    font-size: 20px; /* Font size for new list container */
+    text-align: center; /* Center align text */
+    padding: 10px; /* Padding for new list container */
+    background-color: rgba(255, 255, 255, 0.214); /* Semi-transparent background */
 }
-#new-list{
-    border: 0;
-    padding: 10px;
-    border-radius: 5px;
-    width: 50%;
-    display: flex;
-    margin: 10px auto;
-    font-size: 18px;
+
+#new-list {
+    border: 0; /* No border */
+    padding: 10px; /* Padding for input */
+    border-radius: 5px; /* Rounded corners */
+    width: 50%; /* Width of the input */
+    display: flex; /* Flexbox layout */
+    margin: 10px auto; /* Center the input */
+    font-size: 18px; /* Font size for input */
 }
-#new-list:focus{
-    outline: 0;
+
+#new-list:focus {
+    outline: 0; /* Remove outline on focus */
 }
-.list-container{
-    margin: 10px 0;
+
+.list-container {
+    margin: 10px 0; /* Margin for the list container */
 }
-.list{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 18px;
-    padding: 10px;
-    margin: 5px 0;
-    background-color: rgba(255, 255, 255, 0.501);
+
+.list {
+    display: flex; /* Flexbox layout for list items */
+    flex-direction: row; /* Horizontal layout */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center align items */
+    font-size: 18px; /* Font size for list items */
+    padding: 10px; /* Padding for list items */
+    margin: 5px 0; /* Margin for list items */
+    background-color: rgba(255, 255, 255, 0.501); /* Semi-transparent background */
 }
-.list:hover{
-    background-color: rgba(255, 255, 255, 0.668);
+
+.list:hover {
+    background-color: rgba(255, 255, 255, 0.668); /* Change background on hover */
 }
-.list > p{
-    width: 80%;
+
+.list > p {
+    width: 80%; /* Width for the paragraph in list items */
 }
-.check{
-    border-radius: 50%;
-    padding: 5px;
-    height: 20px;
-    width: 20px;
+
+.check {
+    border-radius: 50%; /* Circular check icon */
+    padding: 5px; /* Padding for check icon */
+    height: 20px; /* Height for check icon */
+    width: 20px; /* Width for check icon */
 }
-.checked{
-    background-color: rgba(0, 0, 0, 0.137);
-    
+
+.checked {
+    background-color: rgba(0, 0, 0, 0.137); /* Background when checked */
 }
-.checked-p{
-    text-decoration: line-through;
+
+.checked-p {
+    text-decoration: line-through; /* Strikethrough for checked items */
+}
+
+@media screen and (max-width: 700px) {
+    h1 {
+        font-size: 23px; /* Smaller font size for smaller screens */
+    }
+    .new-list-container {
+        font-size: 18px; /* Smaller font size for smaller screens */
+    }
+    .list {
+        font-size: 16px; /* Smaller font size for list items */
+    }
+}
+
+@media screen and (max-width: 400px) {
+    h1 {
+        font-size: 20px; /* Even smaller font size for very small screens */
+    }
+    .new-list-container {
+        font-size: 16px; /* Smaller font size for new list container */
+    }
+    .list {
+        font-size: 15px; /* Smaller font size for list items */
+    }
 }

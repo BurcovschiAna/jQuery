@@ -20,6 +20,8 @@ $(document).ready(function () {
         } else if ($(this).attr("data-operation") === "=") {  
                 if (currentInput) {
                     expression += currentInput; 
+                    console.log(expression);
+                    
                 } else{
                     return;
                 }
@@ -52,7 +54,13 @@ $(document).ready(function () {
                     currentInput += "."; 
                 }
             }
-        } else if (isOperator($(this))) {
+        } else if($(this).attr("data-operation") === "squared"){
+            currentInput *= 2
+        }else if($(this).attr("data-operation") === "sqrt"){
+            currentInput = Math.sqrt(currentInput);
+        }else if($(this).attr("data-operation") === "division"){
+            currentInput = 1 / currentInput;
+        }else if (isOperator($(this))) {
             if (currentInput) {
                 lastInput = currentInput
                 expression += lastInput + $(this).attr("data-operation");

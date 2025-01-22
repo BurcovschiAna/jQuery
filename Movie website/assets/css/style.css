@@ -48,7 +48,7 @@ a{
     width: 250px;
     height: 30px;
 }
-#search{
+#search, #search-small{
     border: 1px solid #fff;
     background-color: rgba(255, 255, 255, 0.258);
     border-radius: 30px;
@@ -58,14 +58,14 @@ a{
     top: 0;
     left: 0;
 }
-#search:focus{
+#search:focus, #search-small:focus{
     outline: 0;
 }
-#search::placeholder{
+#search::placeholder, #search-small::placeholder{
     color: #fff;
     font-size: 15px;
 }
-#search:focus + .search-img{
+#search:focus + .search-img, #search-small:focus + .search-img{
     right: -30px;
 }
 .search-img{
@@ -83,8 +83,7 @@ a{
 }
 .menu{
     width: 50%;
-    margin: 0 auto;
-    margin-top: 50px;
+    margin: 50px auto 0;
 }
 .menu a{
     font-size: 18px;
@@ -107,31 +106,26 @@ body{
 }
 /** Home  */
 #home{
-    /* position: relative; */
     max-width: 1500px;
     margin: 0 auto;
-    /* height: 500px; */
     overflow: hidden;
 }
 .slide{
     position: relative;
     display: flex;
-    height: 530px;
+    max-height: 530px;
 }
 .slide .img{
-    height: 530px;
-    max-width: 100%;
-    top: 0;
-    left: 0;
+    width: 100%;
+    transition: transform 0.5s ease;
 }
 .slide .img img{
     max-width: 100%;
 }
-.slide > img, .slide > div{
-    position: absolute;
-}
+
 .slide > img {
-    z-index: 2;
+    z-index: 3;
+    position: absolute;
     border-radius: 5px;
     width: 30px;
     height: 30px;
@@ -159,6 +153,7 @@ body{
     width: 30px;
     height: 3px;
     background-color: #ffffff77;
+    cursor: pointer;
 }
 .dot.active{
     background-color: #fff;

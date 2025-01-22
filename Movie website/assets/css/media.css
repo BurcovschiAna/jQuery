@@ -1,0 +1,92 @@
+@media screen and (max-width: 1100px) {
+    .menu{
+        width: 80%;
+    }
+}
+@media screen and (min-width: 801px) {
+    .header-container-small{
+        display: none;
+    }
+    .header-container{
+        display: block;
+    }
+}
+@media screen and (max-width: 800px) {
+    .header-container{
+        display: none;
+    }
+    .burger-menu{
+        width: 40px;
+        height: 30px;
+    }
+    .burger-menu > div{
+        width: 40px;
+        height: 4px;
+        border-radius: 2px;
+        background-color: #fff;
+        transition: all .5s ease-in-out;
+    }
+    .burger-menu > div:nth-child(2){
+        margin: 9px 0;
+    }
+    .burger-menu.open > div:first-child{
+        transform-origin:  left;
+        transform: rotate(40deg);
+    }
+    .burger-menu.open > div:last-child{
+        transform-origin: left;
+        transform: rotate(-40deg);
+    }
+    .burger-menu.open > div:nth-child(2){
+        background: transparent;
+    }
+    /* .header-container-small.open > div >.flexbox{
+        display: none;
+    } */
+     .header-container-small.flexbox{
+        align-items: start;
+     }
+    .menu-container{
+        display: none;
+    }
+    .menu-container > div, .menu a {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .menu-container > div > div{
+        margin: 0 0 20px;
+    }
+    .menu a{
+        margin: 10px 0;
+    }
+    .dots{
+        margin: 30px auto;
+    }
+}
+@media screen and (max-width: 600px) {
+    .body-container{
+        padding: 20px;
+    }
+    .dot{
+        width: 20px;
+    }
+    .dots{
+        width: 50%;
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .body-container{
+        padding: 10px ;
+    }
+    .slide > img{
+        width: 7%;
+    }
+    .dot{
+        width: 15px;
+        height: 2px;
+    }
+    
+}

@@ -18,7 +18,6 @@ $(document).ready(function () {
                 $(this).val(""); // Clear the input field
             }
         }
-        
         // Attach click event handlers for delete and check icons
         $(".delete").on("click", deleteItem);
         $(".check").on("click", check);

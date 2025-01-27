@@ -40,32 +40,8 @@ $(document).ready(function () {
     const imgContainer = $(".img");
     const totalImages = $(".img img").length;
     let currentIndex = 0;
-
-    function updateDots() {
-        $(".dot").removeClass("active");
-        $(".dot").eq(currentIndex).addClass("active");
-    }
-
-    function moveToIndex(index) {
-        imgContainer.css("transform", `translateX(-${index * 100}%)`);
-        updateDots();
-    }
-
-    $("#prev").on("click", function () {
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalImages - 1;
-        moveToIndex(currentIndex);
-    });
-
-    $("#next").on("click", function () {
-        currentIndex = (currentIndex < totalImages - 1) ? currentIndex + 1 : 0;
-        moveToIndex(currentIndex);
-    });
-
-    $(".dot").on("click", function () {
-        currentIndex = $(this).index();
-        moveToIndex(currentIndex);
-    });
-
+    let slideInterval;
+// * Menu
     $(".burger-menu").on("click", function () {
         $(this).toggleClass("open");
         if($(".header-container-small").hasClass("open")){
@@ -80,4 +56,40 @@ $(document).ready(function () {
         }
 
     });
+// * Slide Show
+    // setTimeout(setInterval(nexSlide, 8000), 8000)
+    function updateDots() {
+        $(".dot").removeClass("active");
+        $(".dot").eq(currentIndex).addClass("active");
+    }
+
+    function moveToIndex(index) {
+        imgContainer.css("transform", `translateX(-${index * 100}%)`);
+        updateDots();
+    }
+
+    $("#prev").on("click", function () {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalImages - 1;
+        moveToIndex(currentIndex);
+        resetInterval();
+    });
+
+    $("#next").on("click", nexSlide);
+
+    $(".dot").on("click", function () {
+        currentIndex = $(this).index();
+        moveToIndex(currentIndex);
+    });
+    function nexSlide() {  
+        currentIndex = (currentIndex < totalImages - 1) ? currentIndex + 1 : 0;
+        moveToIndex(currentIndex);
+        resetInterval();
+    }
+    function resetInterval() {
+        clearInterval(slideInterval); // Clear the existing interval
+        slideInterval = setInterval(nexSlide, 8000); // Set a new interval
+    }
+    resetInterval();
 });
+
+

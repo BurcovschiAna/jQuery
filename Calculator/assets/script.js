@@ -39,9 +39,7 @@ $(document).ready(function () {
                     currentInput = result.toString();
                     expression = "";
                     return;
-                }       
-                
-                
+                }        
         } else if (button === "+/-") {
             currentInput = `(${(currentInput * -1).toString()})`;
             

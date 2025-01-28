@@ -1,41 +1,3 @@
-// $(document).ready(function () {
-//     const imgContainer = $(".img");
-//     const totalImages = $(".img img").length;
-    
-//     let currentIndex = 0;
-
-//     $("#prev").on("click", function () {
-//         const imgWidth = parseInt($(".img img").css("width"));
-//         if (currentIndex > 0) {
-//             currentIndex--;
-//             imgContainer.animate({
-//                 left: `+=${imgWidth}`
-//             }, 500);
-//         } else{
-//             currentIndex = totalImages - 1; 
-//             imgContainer.animate({
-//                 left: `-=${imgWidth * (totalImages - 1)}`
-//             }, 500);
-            
-//         }
-//     });
-//     $("#next").on("click", function () {
-//         const imgWidth = parseInt($(".img img").css("width"));        
-//         if (currentIndex < totalImages - 1) {
-//             currentIndex++;
-//             imgContainer.animate({
-//                 left: `-=${imgWidth}`
-//             }, 500);
-//         } else{
-//             currentIndex = 0
-//             imgContainer.animate({
-//                 left: `0`
-//             }, 500);
-//         }
-//     });
-// });
-
-
 $(document).ready(function () {
     const imgContainer = $(".img");
     const totalImages = $(".img img").length;
@@ -57,7 +19,6 @@ $(document).ready(function () {
 
     });
 // * Slide Show
-    // setTimeout(setInterval(nexSlide, 8000), 8000)
     function updateDots() {
         $(".dot").removeClass("active");
         $(".dot").eq(currentIndex).addClass("active");
@@ -86,10 +47,12 @@ $(document).ready(function () {
         resetInterval();
     }
     function resetInterval() {
-        clearInterval(slideInterval); // Clear the existing interval
-        slideInterval = setInterval(nexSlide, 8000); // Set a new interval
+        clearInterval(slideInterval); 
+        slideInterval = setInterval(nexSlide, 8000); 
     }
     resetInterval();
+    
+    
 });
 
 

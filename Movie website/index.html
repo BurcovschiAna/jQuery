@@ -38,40 +38,36 @@
             
         </div>
         <div class="header-container-small flexbox">
-            
-                <div class="flexbox brand">
-                    <img src="./assets/img/svg/movie-projector.svg" alt="logo" class="logo">
-                    <h1 class="website-name">MovieMatrix</h1>
-                </div>
-                <div class="menu-container">
+             <div class="flexbox brand">
+                <img src="./assets/img/svg/movie-projector.svg" alt="logo" class="logo">
+                <h1 class="website-name">MovieMatrix</h1>
+            </div>
+            <div class="menu-container">
+                <div>
+                    <div class="search">
+                        <input type="search" id="search-small" placeholder="Search Movies & TV" autocomplete="off">
+                        <img src="./assets/img/svg/search.svg" alt="search" class="search-img">
+                    </div>
                     <div>
-                        <div class="search">
-                            <input type="search" id="search-small" placeholder="Search Movies & TV" autocomplete="off">
-                            <img src="./assets/img/svg/search.svg" alt="search" class="search-img">
-                        </div>
-                        <div>
-                            <a href="">Sign In</a> 
-                            <span class="sign-in">|</span>      
-                            <a href="">Sign Up</a>
-                        </div>
-                        <div class="menu">
-                            <a href="index.html">Home</a>
-                            <a href="#about">About</a>
-                            <a href="#categores">Categories</a>
-                            <a href="#top-rated">Top-Rated</a>
-                            <a href="#contact">Contact</a>
-                        </div>
+                        <a href="">Sign In</a> 
+                        <span class="sign-in">|</span>      
+                        <a href="">Sign Up</a>
+                    </div>
+                    <div class="menu">
+                        <a href="index.html">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#categores">Categories</a>
+                        <a href="#top-rated">Top-Rated</a>
+                        <a href="#contact">Contact</a>
                     </div>
                 </div>
-                
-                <div class="burger-menu">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            
+            </div>               
+            <div class="burger-menu">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
-        
     </div>
     <!--* body -->
     <div class="body-container">
@@ -206,7 +202,7 @@
                 </div>
                 <div>
                     <p class="label">
-                        orion adn The Dark
+                        Orion adn The Dark
                     </p>
                     <div class="rating flexbox">
                         <i class="bi bi-star-fill"></i>
@@ -312,37 +308,55 @@
                 </div>
             </div> 
         </div>
-        <div id="contact">
-            <div class="contact-container ">
-                <div>
-                    <div class="contact-item">
-                        <input type="text" autocomplete="off" id="name" required>
-                        <label for="name">Name</label>
+        <div id="contact" class="flexbox">
+            <div>
+                <div class="contact-container ">
+                    <div>
+                        <div class="contact-item">
+                            <input type="text" autocomplete="off" id="first-name" required>
+                            <label for="first-name">First name</label>
+                        </div>
+                        <p class="error hidden ">faf</p>
                     </div>
-                    <p class="error hidden ">faf</p>
+
+                    <div>
+                        <div class="contact-item">
+                            <input type="text" autocomplete="off" id="last-name" required>
+                            <label for="last-name">Last name</label>
+                        </div>
+                        <p class="error hidden ">faf</p>
+                    </div>
+
+                    <div>
+                        <div class="contact-item">
+                            <input type="text" autocomplete="off" id="phone" required>
+                            <label for="phone">Phone</label>
+                        </div>
+                        <p class="error hidden ">faf</p>
+                    </div>
+
+                    <div>
+                        <div class="contact-item">              
+                            <input type="text" autocomplete="off" id="email" required>
+                            <label for="email">Email</label>                     
+                        </div>
+                        <p class="error hidden ">faf</p>
+                    </div> 
                 </div>
+
                 <div class="contact-item message">
                     <textarea id="message" required></textarea>
                     <label for="message">Message</label>
                 </div>
-                <div>
-                    <p>
-                        We'd love to hear from you! If you have any questions, feedback, or inquiries, please fill out the form. Our team is here to assist you and will respond as soon as possible. Thank you for reaching out!
-                        Your thoughts are important to us, and we look forward to connecting with you!
-                    </p>
-                </div>
-                <div>
-                    <div class="contact-item">              
-                        <input type="text" autocomplete="off" id="email" required>
-                        <label for="email">Email</label>                     
-                    </div>
-                    <p class="error hidden ">faf</p>
-                </div>                
-                
+
                 <div class="send-btn">
                     Send
                 </div>                
             </div>
+            <p>
+                We'd love to hear from you! If you have any questions, feedback, or inquiries, please fill out the form. Our team is here to assist you and will respond as soon as possible. Thank you for reaching out!
+                Your thoughts are important to us, and we look forward to connecting with you!
+            </p>
         </div>
     </div>
 

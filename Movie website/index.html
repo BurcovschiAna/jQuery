@@ -31,7 +31,7 @@
             <div class="flexbox menu">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
-                <a href="#categories">Categories</a>
+                <a href="movies.html">Movies</a>
                 <a href="#top-rated">Top-Rated</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -56,7 +56,7 @@
                     <div class="menu">
                         <a href="index.html">Home</a>
                         <a href="#about">About</a>
-                        <a href="#categores">Categories</a>
+                        <a href="movies.html">Movies</a>
                         <a href="#top-rated">Top-Rated</a>
                         <a href="#contact">Contact</a>
                     </div>
@@ -69,6 +69,7 @@
             </div>
         </div>
     </div>
+    <img src="./assets/img/movie" alt="">
     <!--* body -->
     <div class="body-container">
         <!--* home section -->
@@ -218,8 +219,8 @@
             <h1 class="subtitle">
                 Categories
             </h1>
-            <div class="categorie-container">
-                <div class="categorie-item">
+            <div class="category-container">
+                <div class="category-item">
                     <div>
                         <img src="./assets/img/movie/Avengers infiny war movie.jpg" alt="">
                         <div class="overlay"></div>
@@ -229,7 +230,7 @@
                     </h1>
                     
                 </div>
-                <div class="categorie-item">
+                <div class="category-item">
                     <div>
                         <img src="./assets/img/movie/Red One movie.jpg" alt="">
                         <div class="overlay"></div>
@@ -238,7 +239,7 @@
                         Comedies
                     </h1>
                 </div>
-                <div class="categorie-item">
+                <div class="category-item">
                     <div>
                         <img src="./assets/img/movie/A star is born movie.jpg" alt="">
                         <div class="overlay"></div>
@@ -247,7 +248,7 @@
                        Drama
                     </h1>
                 </div>
-                <div class="categorie-item">
+                <div class="category-item">
                     <div>
                         <img src="./assets/img/movie/Avatar movie.jpg" alt="">
                         <div class="overlay"></div>
@@ -256,7 +257,7 @@
                        Fantasy
                     </h1>
                 </div>
-                <div class="categorie-item">
+                <div class="category-item">
                     <div>
                         <img src="./assets/img/movie/IT movie.jpg" alt="">
                         <div class="overlay"></div>
@@ -265,7 +266,7 @@
                        Horror 
                     </h1>
                 </div>
-                <div class="categorie-item">
+                <div class="category-item">
                     <div>
                         <img src="./assets/img/movie/Orion and the dark movie.jpg" alt="">
                         <div class="overlay"></div>
@@ -316,7 +317,7 @@
                             <input type="text" autocomplete="off" id="first-name" required>
                             <label for="first-name">First name</label>
                         </div>
-                        <p class="error hidden ">faf</p>
+                        <p class="error hidden" id="invalid-first-name">faf</p>
                     </div>
 
                     <div>
@@ -324,7 +325,7 @@
                             <input type="text" autocomplete="off" id="last-name" required>
                             <label for="last-name">Last name</label>
                         </div>
-                        <p class="error hidden ">faf</p>
+                        <p class="error hidden" id="invalid-last-name">faf</p>
                     </div>
 
                     <div>
@@ -332,7 +333,7 @@
                             <input type="text" autocomplete="off" id="phone" required>
                             <label for="phone">Phone</label>
                         </div>
-                        <p class="error hidden ">faf</p>
+                        <p class="error hidden" id="invalid-phone">faf</p>
                     </div>
 
                     <div>
@@ -340,7 +341,9 @@
                             <input type="text" autocomplete="off" id="email" required>
                             <label for="email">Email</label>                     
                         </div>
-                        <p class="error hidden ">faf</p>
+                        <p class="error hidden" id="invalid-email">
+                            Invalid email
+                        </p>
                     </div> 
                 </div>
 
@@ -403,8 +406,17 @@
             &#9400; 2025 Movie Matrix. Developed by Ana Burcovschi. All rights reserved.
         </div>
      </div>
+     <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+     <script type="text/javascript">
+        (function(){
+            emailjs.init("7uevuzgx8Zwr11ct9");
+        })();
+        </script>
     <script src="./assets/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="./assets/node_modules/jquery-ui/dist/jquery-ui.min.js"></script>
-    <script src="./assets/script.js"></script>
+    <script src="./assets/js/menu.js"></script>
+    <script src="./assets/js/index.js"></script>
 </body>
 </html>

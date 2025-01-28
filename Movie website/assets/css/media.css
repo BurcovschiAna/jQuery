@@ -109,7 +109,7 @@
     .display-movie{
         grid-template-columns: repeat(2, 1fr);
     }
-    .categorie-container{
+    .category-container{
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -129,7 +129,7 @@
     }
 }
 @media screen and (max-width: 450px) {
-    .display-movie, .categorie-container{
+    .display-movie, .category-container{
         grid-template-columns: 1fr;
     }
     .subtitle{

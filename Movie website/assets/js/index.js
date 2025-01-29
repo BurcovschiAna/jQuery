@@ -41,49 +41,92 @@ $(document).ready(function () {
     }
     resetInterval();
     
+    // * modal
+    $("#modal").dialog({
+        modal: true,
+        draggable: false,
+        resizable: false,
+        classes: {
+            "ui-dialog": "modal",
+            "ui-dialog-titlebar": "modal"
+        },
+        autoOpen: false,
+    })
     // * contact form
     $(".send-btn").on("click", function () {
-        if(validForm($("#email").val())){
-            // emailjs.send("service_l4zx1sz", "template_1a47tqv", {
-            //     first_name: $("#first-name").val(),
-            //     last_name: $("#last-name").val(),
-            //     phone: $("#phone").val(),
-            //     email:$("#email").val(),
-            //     message: $("#message").val()
-            // }) .then(function(response) {
-            //     console.log('Email sent:', response);
-            //     alert('Email-ul a fost expediat cu succes!');
-            // }, function(error) {
-            //     console.error('Error sending email:', error);
-            //     alert('Emaul-ul nu a fost expediat!');
-            // });
+        if(validForm($("#email").val(), $("#first-name").val(), $("#last-name").val(), $("#phone").val(), $("#message").val())){
+            $("#modal").dialog("open")
+            emailjs.send("service_l4zx1sz", "template_1a47tqv", {
+                first_name: $("#first-name").val(),
+                last_name: $("#last-name").val(),
+                phone: $("#phone").val(),
+                email:$("#email").val(),
+                message: $("#message").val()
+            });
         } else{
             return;
         }
         
     });
-    function validForm(email, firstName, lastName, message){
-        let isValit = true;
-        if(!emailPattern.test(email)){
-            $("#invalid-email").removeClass("hidden");
-            $("#invalid-email").html("Invalid emal");
-            isValit = false
-        } else if(email === ""){
+    function validForm(email, firstName, lastName, phone, message){
+        let isValid = true;
+        if(email === ""){
             $("#invalid-email").html("You must enter an email");
             $("#invalid-email").removeClass("hidden");
+            isValid = false
+        } else if( !emailPattern.test(email)){
+            $("#invalid-email").removeClass("hidden");
+            $("#invalid-email").html("Invalid emal");
+            isValid = false;
         } else{
             $("#invalid-email").addClass("hidden");
         }
+        
         if(firstName === ""){
             $("#invalid-first-name").html("You must enter your first name");
-            $("#invalid-first-name").removeClass("hidden");
+            $("#invalid-first-name").removeClass("hidden");            
+            isValid = false
         } else if(!namePattern.test(firstName)){
-
-        }
-        if(lastName === ""){
-            $("#invalid-first-name").html("You must enter your first name");
+            $("#invalid-first-name").html("Ivalid first name");
             $("#invalid-first-name").removeClass("hidden");
+        } else{
+            $("#invalid-first-name").addClass("hidden");
         }
+
+        if(lastName === ""){
+            $("#invalid-last-name").html("You must enter your last name");
+            $("#invalid-last-name").removeClass("hidden");
+            isValid = false
+        } else if(!namePattern.test(lastName)){
+            $("#invalid-last-name").html("Invalid last name");
+            $("#invalid-last-name").removeClass("hidden");
+            isValid = false
+        } else{
+            $("#invalid-last-name").addClass("hidden");
+        }
+
+        if(phone === ""){
+            $("#invalid-phone").html("You must enter your phone number");
+            $("#invalid-phone").removeClass("hidden");
+            isValid = false
+        } else if(!phonePattern.test(phone)){
+            $("#invalid-phone").html("Invalid phone number");
+            $("#invalid-phone").removeClass("hidden");
+            isValid = false
+        } else{
+            $("#invalid-phone").addClass("hidden");
+        }
+
+        if(message === ""){
+            $("#invalid-message").html("You must enter a message");
+            $("#invalid-message").removeClass("hidden");
+            isValid = false
+        } else{
+            $("#invalid-message").addClass("hidden");
+        }
+        console.log(phone);
+        
+        return isValid;
     }
 
     

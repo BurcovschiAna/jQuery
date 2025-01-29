@@ -20,6 +20,10 @@ a{
 .hidden{
     display: none;
 }
+/* *modal */
+.modal{
+    border-radius: 15px;
+}
 /** header */
 .header{
     padding: 30px;
@@ -362,7 +366,7 @@ body{
     scrollbar-color: #000 #fff;
 }
 .error{
-    color: #FF2929;
+    color: #D84040;
 }
 .send-btn{
     background-color: #000;

@@ -11,35 +11,35 @@ let allMovies = [
         moviePoster: "./assets/img/movie/Avatar movie.jpg",
         movieRating: "5",
         movieIndex: "1",
-        movieCategory: ["SF"]
+        movieCategory: ["S-F"]
     },
     {
         movieName: "Avengers Infinity War",
         moviePoster: "./assets/img/movie/Avengers infiny war movie.jpg",
         movieRating: "4.9",
         movieIndex: "2",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     {
         movieName: "Alligiant",
         moviePoster: "./assets/img/movie/Alligiant.jpg",
         movieRating: "2",
         movieIndex: "3",
-        movieCategory: ["SF"]
+        movieCategory: ["S-F"]
     },
     {
         movieName: "Avengers",
         moviePoster: "./assets/img/movie/Avengers movie.jpg",
         movieRating: "4.5",
         movieIndex: "4",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     {
         movieName: "Damsel",
         moviePoster: "./assets/img/movie/Damsel movie.jpg",
         movieRating: "2.5",
         movieIndex: "5",
-        movieCategory: ["SF", "Drama"]
+        movieCategory: ["S-F", "Drama"]
     },
     {
         movieName: "Divergent",
@@ -82,21 +82,21 @@ let allMovies = [
         moviePoster: "./assets/img/movie/Hobbit the battle of the five armies.jpg",
         movieRating: "3",
         movieIndex: "",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     {
         movieName: "Hobbit the Disolation of Smaug",
         moviePoster: "./assets/img/movie/Hobbit the disolation of smaug.jpg",
         movieRating: "3.5",
         movieIndex: "",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     {
         movieName: "Hobbit",
         moviePoster: "./assets/img/movie/Hobbit.jpg",
         movieRating: "4",
         movieIndex: "",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     {
         movieName: "Hotel Transylvania",
@@ -122,7 +122,7 @@ let allMovies = [
     },
     
     {
-        movieName: "Hotel Transylvania Transformania",
+        movieName: "Hotel Transylvania Trans-formania",
         moviePoster: "./assets/img/movie/Hotel transylvania 4 movie.jpg",
         movieRating: "4.5",
         movieIndex: "",
@@ -143,7 +143,7 @@ let allMovies = [
         moviePoster: "./assets/img/movie/inception movie.jpg",
         movieRating: "5",
         movieIndex: "",
-        movieCategory: ["Action", "Drama", "SF"]
+        movieCategory: ["Action", "Drama", "S-F"]
     },
     
     {
@@ -151,7 +151,7 @@ let allMovies = [
         moviePoster: "./assets/img/movie/Insurgent movie.jpg",
         movieRating: "3",
         movieIndex: "",
-        movieCategory: ["SF", "Drama"]
+        movieCategory: ["S-F", "Drama"]
     },
     
     {
@@ -159,7 +159,7 @@ let allMovies = [
         moviePoster: "./assets/img/movie/Iron man 2 movie.jpg",
         movieRating: "5",
         movieIndex: "",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     
     {
@@ -167,7 +167,7 @@ let allMovies = [
         moviePoster: "./assets/img/movie/Iron man 3 movie.webp",
         movieRating: "5",
         movieIndex: "",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     
     {
@@ -175,7 +175,7 @@ let allMovies = [
         moviePoster: "./assets/img/movie/Iron man movie.jpg",
         movieRating: "5",
         movieIndex: "",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     
     {
@@ -226,49 +226,49 @@ let allMovies = [
         moviePoster: "./assets/img/movie/Lord of the rings 1 movie.jpg",
         movieRating: "3",
         movieIndex: "",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     {
         movieName: "Lord of the Rings The Return on the King",
         moviePoster: "./assets/img/movie/Lord of the rings The return on the king movie.jpg",
         movieRating: "3.5",
         movieIndex: "",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     {
         movieName: "Lord of the Rings the Two Towers",
         moviePoster: "./assets/img/movie/Lord of the rings the two towers movie.jpg",
         movieRating: "3",
         movieIndex: "",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     {
         movieName: "Man of Steel",
         moviePoster: "./assets/img/movie/Man of steel.jpg",
         movieRating: "4",
         movieIndex: "",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     {
         movieName: "Matrix 2 ",
         moviePoster: "./assets/img/movie/Matrix 2 movie.jpg",
         movieRating: "3.5",
         movieIndex: "",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     {
         movieName: "Matrix Reloaded",
         moviePoster: "./assets/img/movie/Matrix reloaded movie.jpg",
         movieRating: "3.5",
         movieIndex: "",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     {
         movieName: "Meg 2",
         moviePoster: "./assets/img/movie/Meg 2 movie.jpg",
         movieRating: "3.5",
         movieIndex: "",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     {
         movieName: "Mr Bean Holiday",
@@ -282,7 +282,7 @@ let allMovies = [
         moviePoster: "./assets/img/movie/Mymmt movie.webp",
         movieRating: "3",
         movieIndex: "",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     {
         movieName: "Orion and the Dark",
@@ -303,7 +303,7 @@ let allMovies = [
         moviePoster: "./assets/img/movie/Red One movie.jpg",
         movieRating: "4",
         movieIndex: "",
-        movieCategory: ["SF", "Action", "Comedies"]
+        movieCategory: ["S-F", "Action", "Comedies"]
     },
     {
         movieName: "Split",
@@ -317,7 +317,7 @@ let allMovies = [
         moviePoster: "./assets/img/movie/The dark night.jpg",
         movieRating: "4.5",
         movieIndex: "",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     {
         movieName: "The Lorax",
@@ -359,35 +359,35 @@ let allMovies = [
         moviePoster: "./assets/img/movie/Thor movie.jpg",
         movieRating: "4.5",
         movieIndex: "",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     {
         movieName: "Thor Ragnarok",
         moviePoster: "./assets/img/movie/Thor ragnarok movie.jpg",
         movieRating: "4.5",
         movieIndex: "",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     {
         movieName: "Thor the Dark World",
         moviePoster: "./assets/img/movie/Thor the dark world movie.jpg",
         movieRating: "4",
         movieIndex: "",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     {
         movieName: "Venom Let There Be Carnage",
         moviePoster: "./assets/img/movie/Venom let there be carnage.jpg",
         movieRating: "3.5",
         movieIndex: "",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     {
         movieName: "Venom",
         moviePoster: "./assets/img/movie/Venom.webp",
         movieRating: "4.5",
         movieIndex: "",
-        movieCategory: ["SF", "Action"]
+        movieCategory: ["S-F", "Action"]
     },
     {
         movieName: "Wanted",

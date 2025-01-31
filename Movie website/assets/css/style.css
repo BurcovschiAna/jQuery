@@ -422,6 +422,27 @@ body{
     color: #ffffff77;
 }
 
+
+/* *Video player */
+.selected-movie > div:first-child{
+    max-width: 200px;
+}
+.selected-movie .details{
+    width: 85%;
+}
+.selected-movie img{
+    width: 100%;
+}
+.selected-movie .rating{
+    width: 50px;
+    margin: 0;
+}
+video{
+    max-width: 100%;
+}
+.controls-container{
+    user-select: none;
+}
 /* *footer section */
 .footer{
     padding: 50px;

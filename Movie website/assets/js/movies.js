@@ -102,11 +102,4 @@ $(document).ready(function() {
     });
 
     displayMovies(allMovies);
-
-    // $(".category-item").on("click", function () {
-    //     localStorage.clear();
-    //     let category = $(this).find(".subtitle").text().trim();
-    //     localStorage.setItem("Category", JSON.stringify(category));
-        
-    // });
 });

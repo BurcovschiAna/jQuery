@@ -79,70 +79,203 @@
         </div>
     </div>
     <!--* body -->
-    <div class="body-container">
-        <div class="selected-movie flexbox">
-            <div> 
-                <img src="./assets/img/movie/A star is born movie.jpg" alt="">
-            </div>
-            <div class="details">
-                <div id="movie-name"></div>
-                <div id="rating-number"></div>
-                
-                <div class="rating flexbox">
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                    <i class="bi bi-star-fill"></i>
-                </div>
-                <div id="actors" class="flexbox">
-                    <p>
-                        Actors:
-                    </p>
-                    <div>
-                        <p>Lorem, ipsum.</p>
-                        <p>Possimus, exercitationem.</p>
-                        <p>Asperiores, culpa.</p>
+    <div class="body-container flexbox video">
+        <div id="top-rated" class="display-movie video">
+            <div class="movie-item">
+                <div>
+                    <div class="top-rating">
+                        1
                     </div>
-                    
+                    <img src="./assets/img/movie/A star is born movie.jpg" alt="">
+                </div>
+                <div>
+                    <p class="label">
+                        A star is born
+                    </p>
+                    <div class="rating flexbox">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="movie-item">
+                <div>
+                    <div class="top-rating">
+                        2
+                    </div>
+                    <img src="./assets/img/movie/Avengers infiny war movie.jpg" alt="">
+                </div>
+                <div>
+                    <p class="label">
+                       Avengers Infinity War
+                    </p>
+                    <div class="rating flexbox">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="movie-item">
+                <div>
+                    <div class="top-rating">
+                        3
+                    </div>
+                    <img src="./assets/img/movie/Damsel movie.jpg" alt="">
+                </div>
+                <div>
+                    <p class="label">
+                        Damsel
+                    </p>
+                    <div class="rating flexbox">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="movie-item">
+                <div>
+                    <div class="top-rating">
+                        4
+                    </div>
+                    <img src="./assets/img/movie/Red One movie.jpg" alt="">
+                </div>
+                <div>
+                    <p class="label">
+                        Red One
+                    </p>
+                    <div class="rating flexbox">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="movie-item">
+                <div>
+                    <div class="top-rating">
+                        5
+                    </div>
+                    <img src="./assets/img/movie/Thor ragnarok movie.jpg" alt="">
+                </div>
+                <div>
+                    <p class="label">
+                        Thor Ragnarok
+                    </p>
+                    <div class="rating flexbox">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="movie-item">
+                <div>
+                    <div class="top-rating">
+                        6
+                    </div>
+                    <img src="./assets/img/movie/Orion and the dark movie.jpg" alt="">
+                </div>
+                <div>
+                    <p class="label">
+                        Orion adn The Dark
+                    </p>
+                    <div class="rating flexbox">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                        <i class="bi bi-star"></i>
+                    </div>
                 </div>
             </div>
         </div>
-        <div id="video-player">
-            <video src="./assets/img/20th Century Fox Intro [HD].mp4" id="main-video"></video>
-            <div class="controls-container flexbox">
-                <div class="controls-left">
-                    <i class="material-symbols-outlined">replay_10</i>
-                    <i class="material-symbols-outlined">play_arrow</i>
-                    <i class="material-symbols-outlined">forward_10</i>
-                    <span>
-                        <i class="material-symbols-outlined">volume_up</i>
-                        <input type="range" min="0" max="100" id="volume">
-                    </span>
-                    <div class="timer">
+        <div>
+            <div class="selected-movie flexbox">
+                <div> 
+                    <img src="./assets/img/movie/A star is born movie.jpg" alt="">
+                </div>
+                <div class="details">
+                    <div id="movie-name">name</div>
+                    <div id="rating-number">3.5</div>
+                    
+                    <div class="rating flexbox">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <div id="actors" class="flexbox">
+                        <p>
+                            Actors:
+                        </p>
+                        <div>
+                            <p>Lorem, ipsum.</p>
+                            <p>Possimus, exercitationem.</p>
+                            <p>Asperiores, culpa.</p>
+                        </div>
+                    </div>
+                    <div>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate nesciunt illum quos non, possimus eos error alias mollitia nobis deserunt neque dolorum quaerat voluptatem at repellat ullam labore accusamus dolor quisquam culpa. Placeat officia obcaecati sunt porro, quisquam amet nihil.
+                    </div>
+                </div>
+            </div>
+            <div id="video-player">
+                <video src="./assets/img/20th Century Fox Intro [HD].mp4" id="main-video"></video>
+                <div class="controls-container">
+                    <div class="progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="flexbox timer">
                         <span class="current-time">00:00</span>
                         <span class="duration">2:00</span>
                     </div>
+                    <div class="flexbox">
+                        <div class="controls-left flexbox">
+                            <i class="material-symbols-outlined replay">replay_10</i>
+                            <i class="material-symbols-outlined">play_arrow</i>
+                            <i class="material-symbols-outlined forward">forward_10</i>
+                            <div class="volum-control flexbox">
+                                <i class="material-symbols-outlined">volume_up</i>
+                                <input type="range" min="0" max="100" id="volume">
+                            </div>
+                        </div>
+                        
+                        <div class="controls-right">
+                            <i class="material-symbols-outlined">settings</i>
+                            <i class="material-symbols-outlined">picture_in_picture</i>
+                            <i class="material-symbols-outlined">fullscreen</i>    
+                        </div>
+                    </div>
+                    
                 </div>
-                <div class="controls-right">
-                    <i class="material-symbols-outlined">settings</i>
-                    <i class="material-symbols-outlined">picture_in_picture</i>
-                    <i class="material-symbols-outlined">fullscreen</i>    
-                </div>
-            </div>
-            <div class="setting">
-                <div class="playback">
-                    <ul>
-                        <li data-speed="0.25">0.25</li>
-                        <li data-speed="0.5">0.5</li>
-                        <li data-speed="0.75">0.75</li>
-                        <li data-speed="1">Normal</li>
-                        <li data-speed="1.25">1.25</li>
-                        <li data-speed="1.5">2.5</li>
-                        <li data-speed="1.75">1.75</li>
-                        <li data-speed="2">2</li>
-                    </ul>
-                </div>
+                <!-- <div class="setting">
+                    <div class="playback">
+                        <ul>
+                            <li data-speed="0.25">0.25</li>
+                            <li data-speed="0.5">0.5</li>
+                            <li data-speed="0.75">0.75</li>
+                            <li data-speed="1">Normal</li>
+                            <li data-speed="1.25">1.25</li>
+                            <li data-speed="1.5">2.5</li>
+                            <li data-speed="1.75">1.75</li>
+                            <li data-speed="2">2</li>
+                        </ul>
+                    </div>
+                </div> -->
             </div>
         </div>
     </div>

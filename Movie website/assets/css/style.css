@@ -173,7 +173,6 @@ body{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    /* gap: 60px; */
     margin: 50px auto;
 }
 .movie-item{
@@ -423,12 +422,26 @@ body{
 }
 
 
+.flexbox.video, .flexbox#actors{
+    align-items: start;
+}
+.display-movie.video{
+    grid-template-columns: 1fr;
+    margin-top: 0;
+    width: 50%;
+}
 /* *Video player */
+.selected-movie{
+    margin: 30px auto 80px;
+}
 .selected-movie > div:first-child{
     max-width: 200px;
 }
 .selected-movie .details{
     width: 85%;
+}
+.details > div{
+    padding: 10px 20px;
 }
 .selected-movie img{
     width: 100%;
@@ -437,11 +450,91 @@ body{
     width: 50px;
     margin: 0;
 }
+#actors{
+    width: max-content;
+}
+#actors p{
+    padding: 5px;
+}
 video{
     max-width: 100%;
 }
+#video-player{
+    padding: 10px;
+    background-color: #31363F;
+    position: relative;
+}
 .controls-container{
+    background-color: #31363f7a;
+    width: 96.5%;
+    padding: 10px;
     user-select: none;
+    position: absolute;
+    bottom: 10px;
+}
+.controls-container i{
+    padding: 0 10px;
+}
+.progress{
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+.progress-bar{
+    background-color: #000;
+    width: 50%;
+    height: inherit;
+    border-radius: inherit;
+    cursor: pointer;
+    position: relative;
+}
+.progress-bar::before{
+    content: " ";
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #000;
+}
+.timer{
+    padding: 5px 0 10px;
+}
+.replay, .forward{
+    transition: all .1s ease-in-out;
+}
+.replay:active {
+    transform: rotate(-45deg);
+}
+.forward:active{
+    transform: rotate(45deg);
+}
+#volume{
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    appearance: none; 
+    overflow: hidden;
+    width: 100%;
+    height: 5px;
+    border-radius: 4px; 
+    cursor: pointer; 
+    background-color: #fff;
+    width: 0px;
+    transition: all 0.3s ease-in-out;
+}
+#volume::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    background-color: #000; 
+    box-shadow: -400px 0 0 398px #000; 
+    height: 5px; 
+    width: 7px; 
+    border-radius: 50%; 
+}
+.volum-control i:hover +  #volume, #volume:hover{
+    width: 80px;
 }
 /* *footer section */
 .footer{

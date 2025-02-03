@@ -147,4 +147,40 @@ $(document).ready(function () {
     $(".controls-container").on("mouseover", function () {
         $(this).css("display", "block");
     });
+
+
+
+
+
+  
+    let movieIndex= localStorage.getItem("selectedMovieIndex");
+    movieIndex=  JSON.parse(movieIndex)
+    $("#movie-img").attr("src", allMovies[movieIndex].moviePoster);
+    $("#movie-name").text(allMovies[movieIndex].movieName);
+    $("#rating-number").text(allMovies[movieIndex].movieRating);
+    
+    let stars = '';
+    const fullStars = Math.floor(allMovies[movieIndex].movieRating);
+    const halfStar = allMovies[movieIndex].movieRating % 1 !== 0; 
+
+    for (let i = 0; i < fullStars; i++) {
+        stars += '<i class="bi bi-star-fill"></i>';
+    }
+    
+    if (halfStar) {
+        stars += '<i class="bi bi-star-half"></i>';
+    }
+    for (let i = fullStars + (halfStar ? 1 : 0); i < 5; i++) {
+        stars += '<i class="bi bi-star"></i>';
+    }
+
+    $("#selected-movie-rating").html(stars);
+
+
+
+
+
+
+
+    
 });

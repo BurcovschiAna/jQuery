@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
 }
 .flexbox{
     display: flex;
@@ -12,6 +11,10 @@
 }
 a{
     text-decoration: none;
+    color: #fff;
+}
+.body-container{
+    color: #fff;
 }
 .subtitle{
     font-size: 30px;

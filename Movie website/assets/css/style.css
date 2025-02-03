@@ -458,6 +458,14 @@ body{
 }
 video{
     max-width: 100%;
+    z-index: 0;
+}
+video::-webkit-media-controls {
+    display: none !important;
+}
+.controls-container.active {
+    transform: translateY(0);
+    z-index: 100000000;
 }
 #video-player{
     padding: 10px;
@@ -465,6 +473,7 @@ video{
     position: relative;
 }
 .controls-container{
+    display: none;
     background-color: #0000003d;
     width: 96.5%;
     padding: 10px;
@@ -481,6 +490,30 @@ video{
     background-color: #fff;
     border-radius: 2px;
     cursor: pointer;
+}
+.progres-time{
+    position: absolute;
+    bottom: 90px;
+    left: var(--x);
+    transform: translateX(-50%);
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #000;
+    border-radius: 5px;
+    z-index: 1;
+    display: none;
+}
+.progres-time::before{
+    content: "";
+    position: absolute;
+    bottom: -40%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    background-color: #000;
+    width: 15px;
+    height: 15px;
+    z-index: -1;
+
 }
 .progress-bar{
     background-color: #000;
@@ -540,36 +573,37 @@ video{
  #volume:hover, .volum-control:hover  #volume{
     width: 80px;
 }
-.setting{
+.settings{
     position: absolute;
     right: 20px;
     bottom: 100px;
     background-color: #0000003d;
     max-height: 200px;
     overflow-y: scroll;
+    display: none;
 }
-.setting::-webkit-scrollbar{
+.settings::-webkit-scrollbar{
     width: 8px;
     background-color: transparent;
 }
-.setting::-webkit-scrollbar-thumb{
+.settings::-webkit-scrollbar-thumb{
     height: 80px;
     border: 2px solid transparent;
     background-color: #31363F;
     border-radius: 10px;
 }
-.setting div.active::before{
+.settings div.active::before{
     content: "\e876";
     font-family: "Material Icons";
     position: absolute;
     left: 7px;
     padding-right: 5px;
 }
-.setting .playback div, .setting .playback p{
+.settings .playback div, .settings .playback p{
     padding: 10px 30px;
     /* line-height: 35px; */
 }
-.setting .playback div:not(:first-child):hover{
+.settings .playback div:not(:first-child):hover{
     background-color: #00000051;
 }
 /* *footer section */

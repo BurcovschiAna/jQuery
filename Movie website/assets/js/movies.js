@@ -43,6 +43,10 @@ $(document).ready(function() {
         showPage(currentPage, cards);
         $("#movies").on("mouseover", ".movie-item", showOverlay);
         $("#movies").on("mouseout", ".movie-item", hideOverlay);
+        $(".movie-item").on("click",function () {
+            let movieIndex = $(this).attr("data-index");            
+            localStorage.setItem('selectedMovieIndex', movieIndex);
+        });
     }
 
     function showPage(page, cards) {

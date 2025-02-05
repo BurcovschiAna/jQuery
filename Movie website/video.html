@@ -47,10 +47,10 @@
             
         </div>
         <div class="header-container-small flexbox">
-             <div class="flexbox brand">
+             <a href="index.html" class="flexbox brand">
                 <img src="./assets/img/svg/movie-projector.svg" alt="logo" class="logo">
                 <h1 class="website-name">MovieMatrix</h1>
-            </div>
+            </a>
             <div class="menu-container">
                 <div>
                     <div class="search">
@@ -209,23 +209,27 @@
                 </div>
                 <div class="details">
                     <div id="movie-name">name</div>
-                    <div id="rating-number">3.5</div>
-                    
-                    <div class="rating flexbox" id="selected-movie-rating">
+                    <div class="flexbox">
+                        <div id="rating-number">
+                            3.5
+                        </div>
+                        <div class="rating flexbox" id="selected-movie-rating">
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
                     </div>
+
+                    </div>
+                    
+                    
                     <div id="actors" class="flexbox">
                         <p>
                             Actors:
                         </p>
                         <div>
-                            <p>Lorem, ipsum.</p>
-                            <p>Possimus, exercitationem.</p>
-                            <p>Asperiores, culpa.</p>
+                            
                         </div>
                     </div>
                     <div>
@@ -234,10 +238,12 @@
                 </div>
             </div>
             <div id="video-player">
-                <video id="main-video">
-                    <source src="./assets/img/20th Century Fox Intro [HD].mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+                <div class="main-video">
+                    <video id="main-video">
+                        <source src="./assets/img/20th Century Fox Intro [HD].mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
                 <div class="controls-container">
                     <div class="progres-time">00:00</div>
                     <div class="progress">
@@ -247,7 +253,7 @@
                         <span class="current-time">00:00</span>
                         <span class="duration">2:00</span>
                     </div>
-                    <div class="flexbox">
+                    <div class="flexbox controls">
                         <div class="controls-left flexbox">
                             <i class="material-symbols-outlined replay">replay_10</i>
                             <i class="material-symbols-outlined play">play_arrow</i>
@@ -274,7 +280,7 @@
                         <div data-speed="0.75">0.75</div>
                         <div data-speed="1" class="active">Normal</div>
                         <div data-speed="1.25">1.25</div>
-                        <div data-speed="1.5">2.5</div>
+                        <div data-speed="1.5">1.5</div>
                         <div data-speed="1.75">1.75</div>                    
                     </div>
                 </div>

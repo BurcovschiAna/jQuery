@@ -1,6 +1,5 @@
 $(document).ready(function () {
     const video = $("#main-video");
-
     function playPause() {
         if (video[0].paused) {
             play();
@@ -29,8 +28,14 @@ $(document).ready(function () {
     });
 
     $(video).on("click", function () {
-        $(".play").html("pause");
-        play()
+        playPause()
+    });
+    $(document).on("keydown", function (e) {
+        if(e.key === " " || e.code === "Space"){
+            e.preventDefault();
+            playPause()
+        }
+        
     });
 
     $(".play").on("click", playPause);
@@ -116,17 +121,25 @@ $(document).ready(function () {
     $("#picture-in-picture").on("click", function () {
         video[0].requestPictureInPicture();
     });
-
+  
     $("#fullscreen").on("click", function () {
-        if (video.hasClass("openFullScreen")) {
-            video.removeClass("openFullScreen");
-            $(".controls-container").addClass("");
+    
+        if ($("#video-player").hasClass("openFullScreen")) {
+            $("#video-player").removeClass("openFullScreen");
             document.exitFullscreen();
-            $(this).text("fullscreen");
+            $(this).text("fullscreen"); 
+            
         } else {
-            video.addClass("openFullScreen");
-            video[0].requestFullscreen();
-            $(this).text("fullscreen_exit");
+            $("#video-player").addClass("openFullScreen");
+            $("#video-player")[0].requestFullscreen(); 
+            $(this).text("fullscreen_exit"); 
+        }
+    });
+   
+    document.addEventListener("fullscreenchange", function() {
+        if (!document.fullscreenElement) {
+            $("#video-player").removeClass("openFullScreen");
+            $("#fullscreen").text("fullscreen"); 
         }
     });
     
@@ -138,48 +151,59 @@ $(document).ready(function () {
         let speed = $(this).attr("data-speed");
         video[0].playbackRate = speed;
     });
-    $(video).on("mouseover", function () {
-        $(".controls-container").slideDown();
+
+    $(video).on("mousemove", function () {
+        if(document.fullscreenElement === $("#video-player")[0]){              
+            $(".controls-container").stop().slideDown(); 
+        }
     });
+
     $(video).on("mouseleave", function () {
-        $(".controls-container").slideUp();
+        if (document.fullscreenElement === $("#video-player")[0]) {
+            $(".controls-container").stop().slideUp();
+        }
     });
-    $(".controls-container").on("mouseover", function () {
-        $(this).css("display", "block");
+
+    $(".controls-container").on("mouseenter", function () {
+        if (document.fullscreenElement === $("#video-player")[0]) {
+        $(".controls-container").stop().slideDown(); 
+        }
+    });
+
+    $(".controls-container").on("mouseleave", function () {
+        if (document.fullscreenElement === $("#video-player")[0]) {
+        $(".controls-container").stop().slideUp();
+        }
     });
 
 
 
 
-
-  
     let movieIndex= localStorage.getItem("selectedMovieIndex");
-    movieIndex=  JSON.parse(movieIndex)
-    $("#movie-img").attr("src", allMovies[movieIndex].moviePoster);
-    $("#movie-name").text(allMovies[movieIndex].movieName);
-    $("#rating-number").text(allMovies[movieIndex].movieRating);
-    
-    let stars = '';
-    const fullStars = Math.floor(allMovies[movieIndex].movieRating);
-    const halfStar = allMovies[movieIndex].movieRating % 1 !== 0; 
+    if(movieIndex){
+        movieIndex = JSON.parse(movieIndex)
+        $("#movie-img").attr("src", allMovies[movieIndex].moviePoster);
+        $("#movie-name").text(allMovies[movieIndex].movieName);
+        $("#rating-number").text(allMovies[movieIndex].movieRating);
+        
+        let stars = '';
+        const fullStars = Math.floor(allMovies[movieIndex].movieRating);
+        const halfStar = allMovies[movieIndex].movieRating % 1 !== 0; 
 
-    for (let i = 0; i < fullStars; i++) {
-        stars += '<i class="bi bi-star-fill"></i>';
+        for (let i = 0; i < fullStars; i++) {
+            stars += '<i class="bi bi-star-fill"></i>';
+        }
+        
+        if (halfStar) {
+            stars += '<i class="bi bi-star-half"></i>';
+        }
+        for (let i = fullStars + (halfStar ? 1 : 0); i < 5; i++) {
+            stars += '<i class="bi bi-star"></i>';
+        }
+
+        $("#selected-movie-rating").html(stars);
     }
     
-    if (halfStar) {
-        stars += '<i class="bi bi-star-half"></i>';
-    }
-    for (let i = fullStars + (halfStar ? 1 : 0); i < 5; i++) {
-        stars += '<i class="bi bi-star"></i>';
-    }
-
-    $("#selected-movie-rating").html(stars);
-
-
-
-
-
 
 
     

@@ -6,12 +6,12 @@ $(document).ready(function () {
         if($(".header-container-small").hasClass("open")){
 
             $(".header-container-small").removeClass("open");
-            $(".brand").css("transform", "translateX(0%)").show(500);
-            $(".menu-container").css("transform", "translateX(-1000%)").hide();
+            $(".brand").css("transform", "translateX(0%)").show(1000);
+            $(".menu-container").css("transform", "translateX(-1000%)").hide(500);
         } else{
             $(".header-container-small").addClass("open");
             $(".brand").css("transform", "translateX(-1000%)").hide();
-            $(".menu-container").css("transform", "translateX(0%)").show(500);
+            $(".menu-container").css("transform", "translateX(0%)").show(1000);
         }
 
     });
@@ -27,6 +27,8 @@ $(document).ready(function () {
     let movieNames = allMovies.map(movie => movie.movieName);
     $("#search, #search-small").autocomplete({
         source: movieNames,
+        minLength: 3,
+        autoFocus: true,
         select: function (event, ui) {
             let selectedMovie = allMovies.find(movie => movie.movieName === ui.item.value);
             if (selectedMovie) {
@@ -37,16 +39,12 @@ $(document).ready(function () {
             }
         }
     });
-
     // * top rated
     allMovies.sort((a, b) => b.movieRating - a.movieRating);
-
-    // Construct HTML for the top 6 movies
+    
     let htmlContent = '';
-    const topMovies = allMovies.slice(0, 6); // Get only the top 6 movies
-
+    const topMovies = allMovies.slice(0, 6); 
     topMovies.forEach((movie, index) => {
-        // Construct star rating HTML
         let stars = '';
         const fullStars = Math.floor(movie.movieRating);
         const halfStar = movie.movieRating % 1 !== 0;
@@ -60,10 +58,9 @@ $(document).ready(function () {
         for (let i = fullStars + (halfStar ? 1 : 0); i < 5; i++) {
             stars += '<i class="bi bi-star"></i>';
         }
-
-        // Append movie item to htmlContent
         htmlContent += `
-            <div class="movie-item">
+        <a href="./video.html">
+            <div class="movie-item" data-index="${movie.movieIndex}">
                 <div>
                     <div class="top-rating">${index + 1}</div>
                     <img src="${movie.moviePoster}" alt="">
@@ -72,10 +69,23 @@ $(document).ready(function () {
                     <p class="label">${movie.movieName}</p>
                     <div class="rating flexbox">${stars}</div>
                 </div>
+                <div class="overlay flexbox hidden">
+                    <img src="./assets/img/svg/play.svg" alt="Play">
+                </div>
             </div>
-        `;
+         </a>
+        `;                   
     });
-
-    // Insert constructed HTML into the top-rated container
+    $("#top-rated").on("click", ".movie-item",function () {
+        let movieIndex = $(this).attr("data-index"); 
+        localStorage.setItem('selectedMovieIndex', movieIndex);
+    });
+    $("#top-rated").on("mouseover", ".movie-item", function () {
+        $(this).find(".overlay").removeClass("hidden"); 
+    });
+    $("#top-rated").on("mouseout", ".movie-item", function () {
+        $(this).find(".overlay").addClass("hidden");
+    });
+    
     $("#top-rated").html(htmlContent);
 });

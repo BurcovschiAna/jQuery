@@ -14,6 +14,7 @@
 }
 @media screen and (max-width: 1000px) {
    .body-container.flexbox.video{
+    -webkit-flex-direction: column-reverse;
     flex-direction: column-reverse;
    }
    .display-movie.video{
@@ -44,6 +45,7 @@
         border-radius: 2px;
         background-color: #fff;
         transition: all .5s ease-in-out;
+        -webkit-transition: all .5s ease-in-out;
     }
     .burger-menu > div:nth-child(2){
         margin: 9px 0;
@@ -51,10 +53,12 @@
     .burger-menu.open > div:first-child{
         transform-origin:  left;
         transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
     }
     .burger-menu.open > div:last-child{
         transform-origin: left;
         transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
     }
     .burger-menu.open > div:nth-child(2){
         background: transparent;

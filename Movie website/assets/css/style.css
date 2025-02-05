@@ -741,7 +741,6 @@ body{
 }
 .settings .playback div, .settings .playback p{
     padding: 10px 30px;
-    /* line-height: 35px; */
 }
 .settings .playback div:not(:first-child):hover{
     background-color: #00000051;

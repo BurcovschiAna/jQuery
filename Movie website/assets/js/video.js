@@ -152,32 +152,37 @@ $(document).ready(function () {
         video[0].playbackRate = speed;
     });
 
-    $(video).on("mousemove", function () {
-        if(document.fullscreenElement === $("#video-player")[0]){              
-            $(".controls-container").stop().slideDown(); 
-        }
-    });
-
-    $(video).on("mouseleave", function () {
-        if (document.fullscreenElement === $("#video-player")[0]) {
+    $(video).on("mousemove", showControls);
+    let mouseTimer;
+    
+    function showControls() {
+        $(".controls-container").stop().slideDown();
+        clearTimeout(mouseTimer); // Clear any existing timer
+        mouseTimer = setTimeout(() => {
             $(".controls-container").stop().slideUp();
-        }
-    });
-
-    $(".controls-container").on("mouseenter", function () {
-        if (document.fullscreenElement === $("#video-player")[0]) {
-        $(".controls-container").stop().slideDown(); 
-        }
-    });
-
-    $(".controls-container").on("mouseleave", function () {
-        if (document.fullscreenElement === $("#video-player")[0]) {
+        }, 3000);
+    }
+    
+    $(video).on("mouseleave", function () {
+        clearTimeout(mouseTimer); // Clear the timer when mouse leaves
         $(".controls-container").stop().slideUp();
-        }
     });
+    
+    $(".controls-container").on("mouseenter", function () {
+        $(".controls-container").stop().slideDown();
+        clearTimeout(mouseTimer); // Clear timer when mouse enters controls
+    });
+    
+    $(".controls-container").on("mouseleave", function () {
+        clearTimeout(mouseTimer); // Clear timer when mouse leaves controls
+        mouseTimer = setTimeout(() => {
+            $(".controls-container").stop().slideUp();
+        }, 3000);
+    });
+    
 
 
-
+    // 
 
     let movieIndex= localStorage.getItem("selectedMovieIndex");
     if(movieIndex){
@@ -204,7 +209,33 @@ $(document).ready(function () {
         $("#selected-movie-rating").html(stars);
     }
     
+    //* rating
+        function generateStars(rating) {
+            const fullStars = Math.floor(rating);
+            const halfStar = rating % 1 !== 0;
+            let stars = '';
+    
+            for (let i = 0; i < fullStars; i++) {
+                stars += '<i class="bi bi-star-fill"></i>';
+            }
+    
+            if (halfStar) {
+                stars += '<i class="bi bi-star-half"></i>';
+            }
+    
+            for (let i = fullStars + (halfStar ? 1 : 0); i < 5; i++) {
+                stars += '<i class="bi bi-star"></i>';
+            }
+    
+            return stars;
+        }
 
-
+        $('#user-rating i').on('click', function () {
+            const ratingValue = $(this).data('value');
+            const starsHTML = generateStars(ratingValue);
+            $('#user-rating').html(starsHTML);
+           
+        });
+    
     
 });

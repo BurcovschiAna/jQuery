@@ -39,7 +39,7 @@
     <li><strong>jQuery</strong>: Interactivity and functionality.</li>
 </ul>
 <h3>File Structure</h3>
-<pre><code>calculator-jquery/
+<pre><code>Calculator/
 ├── index.html         # Main HTML file
 ├── assets/
 │   ├── style.css      # CSS styles for the calculator
